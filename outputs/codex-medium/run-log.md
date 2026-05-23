@@ -45,11 +45,11 @@
 
 ## 最終出力
 
-`final-output.md` に未収集。
+`final-output.md` に未編集で保存。VBAコード部分は `final-vba.bas` に抽出して保存。
 
 ## 保存・変換メモ
 
-未収集。`final-vba.bas` は最終出力のVBAコードブロックから抽出のみ行う。
+初回出力と最終出力はユーザー貼り付け内容をMarkdown code fence内に保存した。`final-vba.bas` は最終出力のVBAコードをそのまま抽出した。VBA内容は変更していない。
 
 ## 汚染チェック
 
@@ -65,4 +65,4 @@
 
 ## 未解決事項
 
-最終出力は未収集。`correction-request.md` の内容をCodex mediumへ貼り、修正後の最終出力を収集する。
+Codex medium条件の初回出力、修正依頼、最終出力は収集済み。Excel実行検証と採点はIssue #6以降で行う。
