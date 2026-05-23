@@ -7,7 +7,7 @@
 ## 実行順
 
 1. `chatgpt-instant`
-2. `chatgpt-thinking-extended`
+2. `chatgpt-deep`
 3. `codex-medium`
 4. `codex-xhigh`
 5. `codex-multi-agent-review`

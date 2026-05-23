@@ -1,4 +1,4 @@
-# ChatGPT Thinking拡張 Promptログ
+# ChatGPT 深い Promptログ
 
 ## 実行メタデータ
 

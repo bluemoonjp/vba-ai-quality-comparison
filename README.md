@@ -9,7 +9,7 @@ AIの使い方によって、VBA成果物の品質がどのように変わるか
 同じVBA課題を、次の条件で作成させ、成果物の品質差を比較します。
 
 - ChatGPT Instant
-- ChatGPT Thinking extended
+- ChatGPT 深い
 - Codex、単純な計画から実装、reasoning medium
 - Codex、単純な計画から実装、reasoning xhigh
 - Codex、マルチエージェントレビュー構成

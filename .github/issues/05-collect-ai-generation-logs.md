@@ -9,7 +9,7 @@
 ## 対象範囲
 
 - ChatGPT Instant
-- ChatGPT Thinking extended
+- ChatGPT 深い
 - Codex medium
 - Codex xhigh
 - Codex multi-agent review

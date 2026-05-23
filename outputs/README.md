@@ -22,7 +22,7 @@ Issue #5 の収集手順は `collection-guide-issue-5.md` を参照します。
 現在の受け皿:
 
 - `chatgpt-instant/`
-- `chatgpt-thinking-extended/`
+- `chatgpt-deep/`
 - `codex-medium/`
 - `codex-xhigh/`
 - `codex-multi-agent-review/`

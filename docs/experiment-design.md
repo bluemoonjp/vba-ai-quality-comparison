@@ -9,7 +9,7 @@
 | condition id | 条件 | 許可するやり取り |
 | --- | --- | --- |
 | `chatgpt-instant` | ChatGPT Instant | 仕様確認1回、修正依頼1回 |
-| `chatgpt-thinking-extended` | ChatGPT Thinking extended | 仕様確認1回、修正依頼1回 |
+| `chatgpt-deep` | ChatGPT 深い | 仕様確認1回、修正依頼1回 |
 | `codex-medium` | Codex、単純な計画から実装、reasoning medium | 仕様確認1回、修正依頼1回 |
 | `codex-xhigh` | Codex、単純な計画から実装、reasoning xhigh | 仕様確認1回、修正依頼1回 |
 | `codex-multi-agent-review` | Codex、orchestrator high + explorer medium + reviewer high | 仕様確認1回、修正依頼1回 |

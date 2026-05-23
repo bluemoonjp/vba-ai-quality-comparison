@@ -1,10 +1,10 @@
-# chatgpt-thinking-extended 実行ログ
+# chatgpt-deep 実行ログ
 
 ## 条件メタデータ
 
-- condition id: `chatgpt-thinking-extended`
-- ツール/モデル/モード: ChatGPT Thinking拡張
-- reasoning設定、表示される場合: Thinking拡張
+- condition id: `chatgpt-deep`
+- ツール/モデル/モード: ChatGPT 深い
+- reasoning設定、表示される場合: 深い
 - 実行日: 未収集
 - 実行者: 未収集
 - 課題仕様version: `78fbc6a`

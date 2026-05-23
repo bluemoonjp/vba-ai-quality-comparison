@@ -16,7 +16,7 @@ Issue #5では、5つのAI条件から生成ログと最終成果物を同じ形
 
 - `outputs/collection-guide-issue-5.md`
 - `outputs/chatgpt-instant/`
-- `outputs/chatgpt-thinking-extended/`
+- `outputs/chatgpt-deep/`
 - `outputs/codex-medium/`
 - `outputs/codex-xhigh/`
 - `outputs/codex-multi-agent-review/`
