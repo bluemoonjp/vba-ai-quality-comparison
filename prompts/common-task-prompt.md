@@ -1,4 +1,4 @@
-# Common Task Prompt
+# 共通課題Prompt
 
 以下は、全AI条件に同一内容で渡す共通promptです。仕様確認は1回まで、生成後の修正依頼は1回までです。
 

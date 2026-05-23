@@ -1,5 +1,5 @@
-# Source
+# ソース
 
-Store exported VBA source here, preferably as `.bas` or `.cls` files.
+export済みVBAソースをここへ保存します。標準モジュールは `.bas`、クラスモジュールは `.cls` を優先します。
 
-The exported text source is the reviewable artifact. Macro-enabled workbooks are verification samples, not the primary source for review.
+レビュー対象の正本はテキストとしてexportしたVBAソースです。マクロ有効workbookは検証用サンプルであり、レビュー用の主成果物ではありません。

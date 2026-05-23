@@ -1,65 +1,65 @@
-# Run Log Template
+# 実行ログテンプレート
 
-Copy this file to `outputs/<condition-id>/run-log.md` for each condition.
+各条件で、このファイルを `outputs/<condition-id>/run-log.md` へコピーして使います。
 
-## Condition Metadata
+## 条件メタデータ
 
-- Condition id:
-- Tool/model/mode:
-- Reasoning setting, if visible:
-- Run date:
-- Operator:
-- Task specification version:
-- Sample data version:
-- Evaluation rubric version:
+- condition id:
+- ツール/モデル/モード:
+- reasoning設定、表示される場合:
+- 実行日:
+- 実行者:
+- 課題仕様version:
+- サンプルデータversion:
+- 評価rubric version:
 
-## Common Prompt
+## 共通Prompt
 
-Record the exact prompt sent to the condition.
+対象条件へ送信したprompt全文を記録します。
 
-## Clarification Question
+## 仕様確認質問
 
-- Asked by condition: yes/no
-- Question:
+- 条件側から質問されたか: はい/いいえ
+- 質問:
 
-## Clarification Answer
+## 仕様確認回答
 
-Record the exact answer sent. If no question was asked, write `Not used`.
+送信した回答全文を記録します。質問がなかった場合は `未使用` と書きます。
 
-## First Output
+## 初回出力
 
-Record or link to the unedited first output.
+編集していない初回出力を記録、または参照先を記載します。
 
-## Verification Before Correction
+## 修正前検証
 
-- Verification checklist used:
-- Key defects found:
-- Not-run items and reasons:
+- 使用した検証checklist:
+- 見つかった主な欠陥:
+- 未実行項目と理由:
 
-## Correction Request
+## 修正依頼
 
-Record the exact single correction request sent. If no correction was possible, explain why.
+送信した1回だけの修正依頼全文を記録します。修正依頼を出せなかった場合は理由を書きます。
 
-## Final Output
+## 最終出力
 
-Record or link to the unedited final output.
+編集していない最終出力を記録、または参照先を記載します。
 
-## Storage And Conversion Notes
+## 保存・変換メモ
 
-Record any export, import, formatting, or file-normalization step. Do not silently fix generated code.
+export、import、formatting、ファイル正規化などの手順を記録します。生成コードを黙って修正してはいけません。
 
-## Contamination Check
+## 汚染チェック
 
-- Was any prior condition output visible to this condition?
-- Was any extra hint given beyond the protocol?
-- Notes:
+- この条件から、他条件の先行出力が見える状態だったか:
+- protocol外の追加ヒントを与えたか:
+- メモ:
 
-## Public-Safety Check
+## 公開安全チェック
 
-- Contains only synthetic/public data:
-- Contains no real paths or private identifiers:
-- Contains no secrets or private connector output:
+- 合成/公開可能データだけを含む:
+- 実パスやprivate identifierを含まない:
+- secretやprivate connector outputを含まない:
 
-## Open Questions
+## 未解決事項
 
-Record unresolved assumptions or missing evidence.
+未解決の前提、判断、証跡不足を記録します。

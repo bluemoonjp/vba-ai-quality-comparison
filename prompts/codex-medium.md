@@ -1,32 +1,32 @@
-# Codex Medium Prompt Log
+# Codex Medium Promptログ
 
-## Run Metadata
+## 実行メタデータ
 
-- Date:
-- Tool/model/mode:
-- Reasoning effort: medium
-- Operator:
+- 日付:
+- ツール/モデル/モード:
+- reasoning effort: medium
+- 実行者:
 
-## Initial Prompt
+## 初回Prompt
 
-To be recorded.
+記録予定。
 
-## Clarification Question
+## 仕様確認質問
 
-To be recorded.
+記録予定。
 
-## Clarification Answer
+## 仕様確認回答
 
-To be recorded.
+記録予定。
 
-## First Output
+## 初回出力
 
-To be recorded.
+記録予定。
 
-## Correction Request
+## 修正依頼
 
-To be recorded.
+記録予定。
 
-## Final Output
+## 最終出力
 
-To be recorded.
+記録予定。

@@ -1,20 +1,20 @@
-# Tests
+# テスト
 
-This repository uses manual Windows Excel verification plus static VBA review.
+このrepositoryでは、Windows Excelでの手動検証とVBA静的レビューを組み合わせます。
 
-Verification scenarios should cover:
+検証シナリオには、次を含めます。
 
-- normal daily transfer
-- monthly total recalculation
-- large-branch subtotal
-- regional subtotal for small branches
-- rerun behavior
-- missing daily file
-- duplicate day file
-- unknown branch/business key
-- blank or non-numeric complaint count
-- filename date mismatch
+- 正常な日次転記
+- 月合計の再計算
+- 大支店の単独小計
+- 小支店の地域別小計
+- 再実行時の二重計上防止
+- 欠損日次ファイル
+- 同一日付の重複ファイル
+- 未知の支店/業務キー
+- 空欄または非数値のクレーム件数
+- ファイル名の日付不整合
 
-Record results consistently for every AI condition.
+すべてのAI条件で同じ形式で結果を記録します。
 
-Use `evaluation-sheet-template.md` as the starting point for condition scoring and evidence notes.
+condition idごとの採点と検証証跡は `evaluation-sheet-template.md` を起点にします。

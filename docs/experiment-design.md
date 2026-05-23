@@ -1,66 +1,66 @@
-# Experiment Design
+# 実験設計
 
-## Goal
+## 目的
 
-Compare VBA deliverable quality across different AI usage patterns using one shared business-style automation task.
+同じ業務風VBA課題を使い、AIの使い方ごとの成果物品質を比較します。
 
-## Conditions
+## 条件
 
-| condition id | condition | allowed interaction |
+| condition id | 条件 | 許可するやり取り |
 | --- | --- | --- |
-| `chatgpt-instant` | ChatGPT Instant | one clarification question, one correction request |
-| `chatgpt-thinking-extended` | ChatGPT Thinking extended | one clarification question, one correction request |
-| `codex-medium` | Codex simple plan-to-implementation, medium reasoning | one clarification question, one correction request |
-| `codex-xhigh` | Codex simple plan-to-implementation, very high reasoning | one clarification question, one correction request |
-| `codex-multi-agent-review` | Codex orchestrator high + explorer medium + reviewer high | one clarification question, one correction request |
+| `chatgpt-instant` | ChatGPT Instant | 仕様確認1回、修正依頼1回 |
+| `chatgpt-thinking-extended` | ChatGPT Thinking extended | 仕様確認1回、修正依頼1回 |
+| `codex-medium` | Codex、単純な計画から実装、reasoning medium | 仕様確認1回、修正依頼1回 |
+| `codex-xhigh` | Codex、単純な計画から実装、reasoning xhigh | 仕様確認1回、修正依頼1回 |
+| `codex-multi-agent-review` | Codex、orchestrator high + explorer medium + reviewer high | 仕様確認1回、修正依頼1回 |
 
-These condition ids are the stable folder, log, and report identifiers for the experiment.
+`condition id` は、フォルダ名、ログ名、レポート名に使う安定IDです。
 
-## Execution Protocol
+## 実行手順
 
-Each condition uses the same execution sequence:
+各条件は、同じ手順で実行します。
 
-1. Provide the common task prompt and the same task specification.
-2. Allow at most one clarification question from the AI condition.
-3. Answer the clarification question with the approved standard answer set and the same level of detail for every condition.
-4. Save the first output without human code edits.
-5. Apply the same verification checklist to identify correction points.
-6. Send at most one correction request.
-7. Save the final output without human code edits.
-8. Export or normalize files only for storage, and log every conversion step.
-9. Evaluate the final output with the shared rubric and verification evidence.
+1. 共通promptと同じ課題仕様を渡す。
+2. AIからの仕様確認質問を最大1回まで受ける。
+3. 確認質問には、標準回答集を使い、全条件で同じ粒度で答える。
+4. 初回出力を人手修正せず保存する。
+5. 共通の検証観点で修正点を確認する。
+6. 修正依頼を最大1回だけ送る。
+7. 最終出力を人手修正せず保存する。
+8. 保存形式変換やexportを行った場合は、すべてログに残す。
+9. 共通の評価基準と検証証跡で評価する。
 
-If a condition does not ask a clarification question, the unused clarification turn is not replaced by extra instructions. If a condition cannot produce runnable or reviewable output, record the failure and continue to evaluation.
+AIが確認質問をしない場合、その未使用枠を追加指示に置き換えません。実行可能またはレビュー可能な出力を作れない場合も、その失敗を記録して評価します。
 
-## Fairness Rules
+## 公平性ルール
 
-- Use the same task specification, samples, expected results, and rubric for all conditions.
-- Give clarification answers at the same level of detail.
-- Base correction requests on the same verification checklist.
-- Do not manually improve generated VBA before scoring.
-- Log any format conversion, export/import step, or failed execution.
-- Do not expose earlier condition outputs, reviews, fixes, or scores to later conditions.
-- Do not improve the prompt between conditions unless the entire experiment is restarted or the run is explicitly marked as contaminated.
-- Use `outputs/run-log-template.md` for condition logs and `tests/evaluation-sheet-template.md` for evaluation records.
+- 全条件で同じ課題仕様、サンプル、期待結果、評価基準を使う。
+- 確認質問への回答は、同じ情報量にそろえる。
+- 修正依頼は、同じ検証観点に基づいて作る。
+- 評価前に生成VBAを人手で改善しない。
+- 保存形式変換、export/import、実行失敗はログに残す。
+- 先行条件の出力、レビュー、修正、点数を後続条件へ見せない。
+- 条件の途中でpromptを改善しない。改善した場合は実験をやり直すか、汚染ありとして記録する。
+- 条件ログには `outputs/run-log-template.md` を使い、評価記録には `tests/evaluation-sheet-template.md` を使う。
 
-## Human Intervention Boundary
+## 人手介入の境界
 
-Allowed human actions:
+許可する人手作業:
 
-- paste the fixed common prompt into each condition
-- answer the single clarification question using approved information
-- send the single correction request
-- save, export, or format generated output for repository storage
-- run verification and record evidence
+- 固定した共通promptを各条件へ貼り付ける。
+- 1回だけの確認質問に、標準回答集の範囲で答える。
+- 1回だけの修正依頼を送る。
+- リポジトリ保存のために生成物を保存、export、整形する。
+- 検証を実行し、証跡を記録する。
 
-Disallowed human actions before scoring:
+評価前に禁止する人手作業:
 
-- rewrite generated VBA
-- add missing logic
-- silently correct syntax or object model mistakes
-- give one condition extra hints that other conditions did not receive
-- reuse a better solution from another condition
+- 生成VBAを書き換える。
+- 不足ロジックを補う。
+- 構文ミスやExcel object modelの誤りを黙って直す。
+- ある条件だけ追加ヒントを与える。
+- 別条件の良い解法を再利用する。
 
-## Public Boundary
+## 公開境界
 
-All workbooks, branch names, business names, folder names, and counts are synthetic. Public release requires metadata and hidden-content checks for any workbook.
+workbook、支店名、業務名、フォルダ名、件数はすべて合成データです。workbookを公開する場合は、メタデータと隠し内容を確認します。

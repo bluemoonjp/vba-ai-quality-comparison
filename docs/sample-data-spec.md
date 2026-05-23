@@ -1,46 +1,46 @@
-# Sample Data Specification
+# サンプルデータ仕様
 
-Issue #3 defines the synthetic sample set used by every AI condition.
+Issue #3 では、全AI条件で使う合成サンプルセットを定義しました。
 
-## Scope
+## 対象範囲
 
-The sample data is fictional and public-safe. It covers three target months:
+サンプルデータは架空で、公開可能な内容だけで構成します。対象月は次の3つです。
 
-- `2026-02`: 28-day month
-- `2026-04`: 30-day month
-- `2026-05`: 31-day month
+- `2026-02`: 28日の月
+- `2026-04`: 30日の月
+- `2026-05`: 31日の月
 
-The monthly workbook layout always includes day columns `1` through `31` plus a monthly total. Days outside the target month remain blank in expected results.
+月次workbookのレイアウトは、常に日付列 `1` から `31` と月合計列を持ちます。対象月に存在しない日付列は、期待結果では空欄にします。
 
-## Source Of Truth
+## 正本
 
-- `samples/source/branches.csv`: branch master and subtotal grouping.
-- `samples/source/business-lines.csv`: business line master.
-- `samples/source/daily-records.csv`: synthetic rows used to build daily workbooks.
-- `samples/expected/monthly-expected.csv`: expected monthly transfer results generated from valid source rows.
-- `samples/expected/anomaly-expected.csv`: expected handling for abnormal sample cases.
+- `samples/source/branches.csv`: 支店マスタと小計グループ。
+- `samples/source/business-lines.csv`: 業務マスタ。
+- `samples/source/daily-records.csv`: 日次workbook生成に使う合成行。
+- `samples/expected/monthly-expected.csv`: 正常行から生成される月次転記期待値。
+- `samples/expected/anomaly-expected.csv`: 異常系サンプルの期待動作。
 
-Checked `.xlsx` workbooks in `samples/checked/` are regenerated artifacts, not the primary source of truth.
+`samples/checked/` の `.xlsx` workbookは再生成可能な成果物であり、正本はCSVとこの仕様書です。
 
-The AI-facing task specification is fixed in `docs/task-spec.md`, and the copy-ready prompt is fixed in `prompts/common-task-prompt.md`.
+AI向け課題仕様は `docs/task-spec.md`、全AI条件へ渡すpromptは `prompts/common-task-prompt.md` です。
 
-## Branch Master
+## 支店マスタ
 
-The sample uses six fictional branches across three fictional regions.
+サンプルでは、3地域にまたがる6つの架空支店を使います。
 
-- Large branches use their own subtotal group.
-- Small branches are subtotaled by region.
-- Branch and region names intentionally avoid real-world naming.
+- 大支店は支店単独の小計グループを持つ。
+- 小支店は地域単位で小計する。
+- 支店名と地域名は実在地名を避けた架空名称です。
 
-## Business Lines
+## 業務マスタ
 
-The sample uses eight fictional business lines. Each branch supports only some business lines, so the branch + business matrix is intentionally uneven.
+サンプルでは、8つの架空業務を使います。支店によって対応する業務が異なるため、支店 + 業務の組み合わせはあえて不均一にしています。
 
-## Daily Workbook Layout
+## 日次workbookレイアウト
 
-Each daily workbook is named `クレーム集計YYMMDD.xlsx` and contains one sheet named `日次集計`.
+各日次workbookのファイル名は `クレーム集計YYMMDD.xlsx` で、シート名は `日次集計` です。
 
-Columns:
+列:
 
 1. `処理区分`
 2. `支店コード`
@@ -50,38 +50,38 @@ Columns:
 6. `クレーム件数`
 7. `備考`
 
-Rows marked `ok` are valid source rows. Other `処理区分` values represent abnormal cases and are documented in `samples/expected/anomaly-expected.csv`.
+`処理区分` が `ok` の行は正常な転記対象です。それ以外の値は異常系ケースで、`samples/expected/anomaly-expected.csv` に期待動作を記録します。
 
-## Monthly Workbook Layout
+## 月次workbookレイアウト
 
-Each monthly workbook is named `月次クレーム集計YYMM.xlsx`. It is an `.xlsx` layout sample for the future macro-enabled `月次クレーム集計YYMM.xlsm`.
+各月次workbookのファイル名は `月次クレーム集計YYMM.xlsx` です。将来のマクロ付き `月次クレーム集計YYMM.xlsm` のレイアウトサンプルとして扱います。
 
-Sheets:
+シート:
 
-- `月次集計`: blank target layout with row keys, day columns, formulas for monthly totals and subtotals.
-- `期待結果`: expected populated result for valid source rows.
-- `マスタ`: branch/business and subtotal reference tables.
-- `異常系`: expected abnormal-case handling for that month.
+- `月次集計`: 行キー、日付列、月合計、小計を持つ空の転記先。
+- `期待結果`: 正常行を転記した期待結果。
+- `マスタ`: 支店/業務/小計グループの参照表。
+- `異常系`: 異常系ケースの期待動作。
 
-Rows in monthly sheets include:
+月次シートの行種別:
 
-- `DETAIL`: branch + business rows used for transfers.
-- `SUBTOTAL`: subtotal rows that must not be treated as input keys.
+- `DETAIL`: 支店 + 業務の転記対象行。
+- `SUBTOTAL`: 小計行。入力キーとして扱わない。
 
-## Abnormal Cases
+## 異常系ケース
 
-The sample includes:
+サンプルには次を含めます。
 
-- missing daily file days
-- duplicate day file in another subfolder
-- unknown branch
-- unknown business line
-- blank complaint count
-- non-numeric complaint count
-- out-of-month day columns in 28-day and 30-day months
+- 日次ファイル欠損日
+- 別サブフォルダに存在する同日重複ファイル
+- 未知の支店
+- 未知の業務
+- 空欄のクレーム件数
+- 数値ではないクレーム件数
+- 28日/30日の月に存在しない月外日列
 
-Expected behavior for abnormal source rows is to skip transfer and record/log the issue. Missing days and out-of-month columns remain blank in expected results.
+異常系の行は転記せず、ログ記録対象とします。欠損日と月外日列は期待結果では空欄です。
 
-## Deferred Work
+## 後続作業
 
-This issue does not create `.xlsm` files, VBA modules, or macro behavior. Those are handled by later issues after the AI-facing task specification is finalized.
+このIssueでは `.xlsm` ファイル、VBAモジュール、マクロ動作は作りません。AI向け課題仕様を固定したあと、後続Issueで扱います。

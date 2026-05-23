@@ -1,40 +1,40 @@
-# AI Task Specification Audit For Issue #4
+# Issue #4 AI向け課題仕様監査
 
-Audit date: 2026-05-23
+監査日: 2026-05-23
 
-## Scope
+## 対象範囲
 
-Issue #4 fixes the task specification and common prompt that will be given to every AI condition. It does not execute any AI condition, generate VBA, edit sample workbooks, or create `.xlsm` files.
+Issue #4 では、全AI条件へ渡す課題仕様と共通promptを固定しました。AI条件の実行、VBA生成、サンプルworkbook編集、`.xlsm` 作成は行っていません。
 
-## Decisions Fixed
+## 固定した判断
 
-- Prompt language: Japanese.
-- Experiment interaction limit: 仕様確認1回 and 修正依頼1回.
-- Expected code: VBA for a standard module, preferably with readable English identifiers.
-- Explanation language: Japanese.
-- Search root: `ThisWorkbook.Path\daily\YYMM\`.
-- Target month source: monthly workbook file name `月次クレーム集計YYMM.xlsm`.
-- Daily date source: daily workbook file name `クレーム集計YYMMDD.xlsx`.
-- Transfer key: branch code + business code.
-- Row rules: `DETAIL` rows are transfer targets; `SUBTOTAL` rows are never input keys.
-- Rerun behavior: clear detail day cells first, then rebuild results.
-- Reference settings: AI may choose, but must explain any additional reference and an alternative.
+- prompt言語: 日本語。
+- 実験上のやり取り上限: 仕様確認1回、修正依頼1回。
+- 期待するコード: 標準モジュール用VBA。読みやすい英語識別子を推奨。
+- 説明言語: 日本語。
+- 探索起点: `ThisWorkbook.Path\daily\YYMM\`。
+- 対象月の判定元: 月次workbook名 `月次クレーム集計YYMM.xlsm`。
+- 日次日付の判定元: 日次workbook名 `クレーム集計YYMMDD.xlsx`。
+- 転記キー: 支店コード + 業務コード。
+- 行種別: `DETAIL` は転記対象、`SUBTOTAL` は入力キーとして扱わない。
+- 再実行: 先に日別転記セルをクリアし、結果を再構築する。
+- 参照設定: AIが判断してよいが、追加参照を使う場合は理由と代替案を説明する。
 
-## Artifacts Updated
+## 更新成果物
 
-- `docs/task-spec.md`: detailed AI-facing task specification.
-- `prompts/common-task-prompt.md`: copy-ready common prompt for all AI conditions.
-- `prompts/clarification-answer-bank.md`: standard answers for the single allowed clarification question.
+- `docs/task-spec.md`: AI向けの詳細課題仕様。
+- `prompts/common-task-prompt.md`: 全AI条件へ渡す共通prompt。
+- `prompts/clarification-answer-bank.md`: 1回だけ許可する確認質問への標準回答。
 
-## Handoff
+## 引き渡し
 
-- Issue #5 should use `prompts/common-task-prompt.md` as the initial prompt for every AI condition.
-- If a condition asks a clarification question, answer from `prompts/clarification-answer-bank.md`.
-- Do not give extra implementation hints outside the prompt and answer bank.
-- Keep generated outputs unedited before scoring.
+- Issue #5 では `prompts/common-task-prompt.md` を全AI条件の初回promptとして使う。
+- AIが確認質問をした場合は、`prompts/clarification-answer-bank.md` から回答する。
+- promptと回答bankの外から追加ヒントを出さない。
+- 評価前に生成物を人手修正しない。
 
-## Deferred Work
+## 後続作業
 
-- Actual AI condition execution is deferred to Issue #5.
-- Windows Excel verification is deferred to Issue #6.
-- Macro-enabled `.xlsm` artifacts remain deferred until a VBA implementation is selected or tested.
+- 実際のAI条件実行は Issue #5 に延期。
+- Windows版Excelでの検証は Issue #6 に延期。
+- マクロ付き `.xlsm` 成果物は、VBA実装を選定または検証する段階まで延期。

@@ -1,151 +1,149 @@
-# VBA Task Specification
+# VBA課題仕様書
 
-This document is the AI-facing task specification source. `prompts/common-task-prompt.md` wraps this content as the prompt used for every AI condition.
+この文書は、AIへ渡す課題仕様の正本です。`prompts/common-task-prompt.md` は、この内容を全AI条件で使うpromptとして包んだものです。
 
-## Goal
+## 目的
 
-Create an Excel VBA macro for a monthly complaint summary workbook.
+月次クレーム集計workbook用のExcel VBAマクロを作成します。
 
-The macro is stored in the monthly workbook and transfers daily complaint counts from daily workbooks into the monthly table by branch and business line.
+マクロは月次workbookに保存され、日次workbookから支店別・業務別のクレーム件数を読み取り、月次表へ転記します。
 
-## Target Workbook
+## 対象Workbook
 
-- Macro host workbook name pattern: `月次クレーム集計YYMM.xlsm`
-- Sample layout workbook name pattern: `月次クレーム集計YYMM.xlsx`
-- Target months in the sample set:
-  - `2602` = February 2026
-  - `2604` = April 2026
-  - `2605` = May 2026
-- The macro must determine the target month from the monthly workbook file name.
-- If the workbook name does not match the expected pattern, the macro must stop with a clear message.
+- マクロを格納するworkbook名: `月次クレーム集計YYMM.xlsm`
+- サンプルレイアウトworkbook名: `月次クレーム集計YYMM.xlsx`
+- サンプル対象月:
+  - `2602` = 2026年2月
+  - `2604` = 2026年4月
+  - `2605` = 2026年5月
+- マクロは月次workbook名から対象月を判定します。
+- workbook名が想定形式に一致しない場合は、分かりやすいメッセージを出して停止します。
 
-## Daily File Search
+## 日次ファイル探索
 
-- Daily workbook name pattern: `クレーム集計YYMMDD.xlsx`
-- Search root: `ThisWorkbook.Path\daily\YYMM\`
-- The macro must recursively search under that search root.
-- Only files whose `YYMM` matches the target month are in scope.
-- The report day is determined from the file name, not from worksheet cell values.
-- Missing daily files are allowed. The corresponding day columns remain blank.
-- If more than one daily file exists for the same `YYMMDD`, process only one file and log the duplicate. Duplicate rows from the skipped file must not be transferred.
+- 日次workbook名: `クレーム集計YYMMDD.xlsx`
+- 探索起点: `ThisWorkbook.Path\daily\YYMM\`
+- マクロは探索起点配下を再帰探索します。
+- 対象月の `YYMM` と一致するファイルだけを処理対象にします。
+- 処理日はワークシート上の値ではなく、ファイル名から判定します。
+- 欠損日次ファイルは許容します。対応する日付列は空欄のままにします。
+- 同一 `YYMMDD` の日次ファイルが複数ある場合は、1件だけ処理し、重複ファイルをログに記録します。スキップしたファイルの行は転記しません。
 
-## Daily Workbook Layout
+## 日次Workbookレイアウト
 
-Each daily workbook contains a sheet named `日次集計`.
+各日次workbookには `日次集計` シートがあります。
 
-Columns:
-
-| column | header | role |
+| 列 | 見出し | 役割 |
 | --- | --- | --- |
-| A | `処理区分` | sample scenario marker; `ok` rows are normal transfer rows |
-| B | `支店コード` | branch key |
-| C | `支店名` | display/check value |
-| D | `業務コード` | business key |
-| E | `業務名` | display/check value |
-| F | `クレーム件数` | complaint count |
-| G | `備考` | sample note |
+| A | `処理区分` | サンプルシナリオ区分。`ok` が正常転記対象 |
+| B | `支店コード` | 支店キー |
+| C | `支店名` | 表示・確認用 |
+| D | `業務コード` | 業務キー |
+| E | `業務名` | 表示・確認用 |
+| F | `クレーム件数` | 転記する件数 |
+| G | `備考` | サンプルメモ |
 
-The macro must transfer rows where `処理区分 = "ok"` and the branch/business/count values are valid. Other values are abnormal sample cases and must be logged/skipped.
+マクロは `処理区分 = "ok"` で、支店/業務/件数が有効な行だけを転記します。その他の値は異常系サンプルとして扱い、転記せずログに記録します。
 
-## Monthly Workbook Layout
+## 月次Workbookレイアウト
 
-The monthly workbook contains these sheets:
+月次workbookには次のシートがあります。
 
-- `月次集計`: target transfer sheet.
-- `マスタ`: branch/business and subtotal reference tables.
-- `異常系`: optional sheet for expected abnormal cases and/or log comparison.
-- `期待結果`: expected result sheet in sample `.xlsx` workbooks; not required in a production `.xlsm`.
+- `月次集計`: 転記先シート。
+- `マスタ`: 支店、業務、小計グループの参照表。
+- `異常系`: 異常系の期待処理、またはログ比較用の任意シート。
+- `期待結果`: サンプル `.xlsx` に含まれる期待値シート。本番 `.xlsm` には不要です。
 
-`月次集計` columns:
+`月次集計` の列構成:
 
-| column range | meaning |
+| 列範囲 | 意味 |
 | --- | --- |
-| A | row type |
-| B | subtotal group |
-| C | region |
-| D | branch code |
-| E | branch name |
-| F | business code |
-| G | business name |
-| H:AL | day columns `1` to `31` |
-| AM | monthly total |
-| AN | note |
+| A | 行種別 |
+| B | 小計グループ |
+| C | 地域 |
+| D | 支店コード |
+| E | 支店名 |
+| F | 業務コード |
+| G | 業務名 |
+| H:AL | 1日から31日の日別列 |
+| AM | 月合計 |
+| AN | 備考 |
 
-Rows:
+行種別:
 
-- `DETAIL`: valid transfer target rows. Use `支店コード + 業務コード` as the transfer key.
-- `SUBTOTAL`: subtotal rows. These rows must never be treated as input keys.
+- `DETAIL`: 有効な転記対象行。転記キーは `支店コード + 業務コード`。
+- `SUBTOTAL`: 小計行。入力キーとして扱ってはいけません。
 
-Branch names and business names are display/check values. The primary matching key is branch code + business code.
+支店名と業務名は表示・確認用です。照合の主キーは `支店コード + 業務コード` です。
 
-## Transfer Rules
+## 転記ルール
 
-- Before transfer, clear only the day-count cells for `DETAIL` rows in columns `H:AL`.
-- Do not clear row labels, master data, formulas, subtotal row labels, or unrelated sheets.
-- For each valid daily row, add the complaint count to the matching day column for the matching `DETAIL` row.
-- If multiple valid rows in the same daily file have the same branch/business key, add them together.
-- Recalculate or restore monthly totals and subtotal rows after transfer.
-- Days outside the target month remain blank and are excluded from monthly totals.
-- The macro must be safe to rerun: running it twice with the same source files should produce the same result, not doubled counts.
+- 転記前に、`DETAIL` 行の `H:AL` の日別件数セルだけをクリアします。
+- 行ラベル、マスタ、数式、小計行ラベル、無関係シートはクリアしません。
+- 有効な日次行ごとに、対応する `DETAIL` 行の日付列へクレーム件数を加算します。
+- 同一日次ファイル内に同じ支店/業務キーの有効行が複数ある場合は合算します。
+- 転記後に月合計と小計行を再計算、または復元します。
+- 対象月の範囲外の日付列は空欄のままにし、月合計から除外します。
+- 再実行しても安全であること。つまり、同じ元ファイルで2回実行しても件数が二重計上されてはいけません。
 
-## Subtotal Rules
+## 小計ルール
 
-Subtotal rules are intentionally irregular.
+小計ルールは意図的に少し変則的です。
 
-- Large branches have their own subtotal group.
-- Small branches are subtotaled by region.
-- `SUBTOTAL` rows are calculated from `DETAIL` rows with the same subtotal group.
-- Subtotal rows cover the same day columns and monthly total column as detail rows.
-- The macro may calculate subtotal values directly or preserve/fill formulas, but the final values must match the expected result.
+- 大支店は支店単独の小計グループを持ちます。
+- 小支店は地域単位で小計します。
+- `SUBTOTAL` 行は、同じ小計グループの `DETAIL` 行から計算します。
+- 小計行も日別列と月合計列を持ちます。
+- マクロは小計値を直接計算しても、数式を保持・再設定しても構いません。ただし最終値は期待結果と一致する必要があります。
 
-## Error And Log Rules
+## エラー・ログルール
 
-The macro must skip transfer and record/log these cases:
+マクロは次のケースを転記せず、記録またはログ出力します。
 
-- unknown branch code
-- unknown business code
-- missing branch/business target row
-- blank complaint count
-- non-numeric complaint count
-- duplicate daily file for the same date
-- daily file name that does not match `クレーム集計YYMMDD.xlsx`
-- daily file whose `YYMM` does not match the target month
-- missing `日次集計` sheet
+- 未知の支店コード
+- 未知の業務コード
+- 月次表に存在しない支店/業務の組み合わせ
+- 空欄のクレーム件数
+- 非数値のクレーム件数
+- 同一日付の重複日次ファイル
+- `クレーム集計YYMMDD.xlsx` に一致しない日次ファイル名
+- 対象月の `YYMM` と一致しない日次ファイル
+- `日次集計` シートがない日次workbook
 
-The log can be an in-workbook sheet, message summary, or structured output table. The implementation must explain where the log is written and what columns it contains.
+ログはworkbook内シート、メッセージ要約、構造化された表のいずれでも構いません。実装では、ログの出力先と列構成を説明する必要があります。
 
-## Reference Setting Policy
+## 参照設定方針
 
-The AI may decide whether to use additional VBA reference settings.
+AIは、追加のVBA参照設定を使うかどうかを判断して構いません。
 
-If additional references are used, the answer must explain:
+追加参照を使う場合、回答には次を含めます。
 
-- the reference name
-- why it is useful
-- what setup is required in Excel/VBE
-- a late-binding or standard-VBA alternative
+- 参照設定名
+- 使う理由
+- Excel/VBEで必要な設定
+- late binding または標準VBAだけで書く代替案
 
-Using no additional references is acceptable.
+追加参照なしの実装も許容します。
 
-## Required Output From AI
+## AIに求める出力
 
-The AI response must include:
+AIの回答には次を含めます。
 
-- complete VBA code suitable for a standard module
-- the macro entry point name
-- where to place the code
-- how to run it
-- whether any reference settings are required
-- assumptions and limitations
-- error/log handling explanation
-- suggested test cases using the sample months `2602`, `2604`, and `2605`
+- 標準モジュールに貼り付けられる完全なVBAコード
+- マクロの入口プロシージャ名
+- コードの配置場所
+- 実行方法
+- 参照設定の要否
+- 前提と制限
+- エラー処理/ログ出力の説明
+- `2602`, `2604`, `2605` のサンプル月で確認すべきテストケース
 
-Prefer readable English identifiers in VBA code. Japanese comments or user-facing messages are acceptable.
+VBAコードの識別子は、読みやすい英語名を推奨します。コメントやユーザー向けメッセージは日本語で構いません。
 
-## Out Of Scope
+## 対象外
 
-- Running the macro.
-- Creating or editing actual `.xlsm` files.
-- Changing the sample workbook layout.
-- Using real operational data.
-- Production deployment.
+- マクロの実行。
+- 実際の `.xlsm` ファイルの作成または編集。
+- サンプルworkbookレイアウトの変更。
+- 実運用データの使用。
+- 本番展開。

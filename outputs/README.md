@@ -1,16 +1,16 @@
-# Outputs
+# 出力
 
-Store generated outputs by condition.
+AI条件ごとの生成結果をここへ保存します。
 
-Each condition folder should include:
+各condition folderには、次を同じ形式で残します。
 
 - `run-log.md`
-- exported VBA files
-- first output
-- correction request
-- final output
-- verification notes
+- export済みVBAファイル
+- 初回出力
+- 修正依頼
+- 最終出力
+- 検証メモ
 
-Use `run-log-template.md` as the starting point for each condition.
+各条件の記録は `run-log-template.md` を起点にします。
 
-Do not store private screenshots, real workbooks, real paths, or unreviewed logs.
+private screenshot、実workbook、実パス、未確認ログは保存しません。

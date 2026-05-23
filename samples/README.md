@@ -1,44 +1,44 @@
-# Samples
+# サンプル
 
-Synthetic workbook samples and expected results will be created here.
+このディレクトリには、公開可能な合成Excelサンプルと期待結果を置きます。
 
-The sample set must include:
+サンプル一式には、次の内容を含めます。
 
-- daily workbook layout for `クレーム集計YYMMDD.xlsx`
-- monthly workbook layout for `月次クレーム集計YYMM.xlsm`
-- branch/business master
-- large-branch and regional subtotal classification
-- expected daily transfers, monthly totals, and subtotals
-- abnormal cases for verification
+- `クレーム集計YYMMDD.xlsx` の日次ブックレイアウト
+- `月次クレーム集計YYMM.xlsm` を想定した月次ブックレイアウト
+- 支店マスタと業務マスタ
+- 大支店の単独小計と、小支店の地域別小計
+- 日次転記、月合計、小計の期待結果
+- 検証用の異常系ケース
 
-Any workbook committed here must pass the public-safety checklist in the repository README.
+ここへcommitするworkbookは、repository READMEと `docs/public-boundary.md` の公開前チェックを通過している必要があります。
 
-## Source Files
+## 正本CSV
 
-- `source/branches.csv`: fictional branch and subtotal grouping master.
-- `source/business-lines.csv`: fictional business line master.
-- `source/daily-records.csv`: source rows used to generate daily workbook samples.
+- `source/branches.csv`: 架空の支店マスタと小計グループ。
+- `source/business-lines.csv`: 架空の業務マスタ。
+- `source/daily-records.csv`: 日次workbookサンプルを生成するための元データ。
 
-The AI-facing task specification is `../docs/task-spec.md`. The prompt used for every AI condition is `../prompts/common-task-prompt.md`.
+AIへ渡す課題仕様の正本は `../docs/task-spec.md` です。全AI条件へ渡す共通promptは `../prompts/common-task-prompt.md` です。
 
-## Expected Results
+## 期待結果
 
-- `expected/monthly-expected.csv`: expected monthly transfer results for valid source rows.
-- `expected/anomaly-expected.csv`: expected handling for abnormal cases.
+- `expected/monthly-expected.csv`: 有効な日次行から生成される月次転記期待値。
+- `expected/anomaly-expected.csv`: 異常系ケースの期待処理。
 
-## Checked Workbooks
+## チェック済みWorkbook
 
-Checked `.xlsx` samples are stored under `checked/`.
+チェック済み `.xlsx` サンプルは `checked/` 配下に置きます。
 
-- Daily samples are under `checked/daily/<YYMM>/`.
-- Monthly layout samples are under `checked/monthly/`.
-- `.xlsx` files are generated artifacts from the CSV source files.
-- `.xlsm` files are intentionally deferred until the VBA implementation phase.
+- 日次サンプルは `checked/daily/<YYMM>/` 配下に置きます。
+- 月次レイアウトサンプルは `checked/monthly/` 配下に置きます。
+- `.xlsx` はCSV正本から生成される再生成可能な成果物です。
+- `.xlsm` はVBA実装フェーズまで意図的に延期します。
 
-## Regeneration
+## 再生成
 
-Run `tools/build-samples.mjs` with the bundled Codex workspace Node runtime to regenerate expected CSV files and checked `.xlsx` samples.
+期待結果CSVとチェック済み `.xlsx` サンプルを再生成する場合は、Codex workspaceのbundled Node runtimeで `tools/build-samples.mjs` を実行します。
 
-By default, the script regenerates expected CSV files and creates any missing checked workbook files. Use `--force` only when intentionally replacing existing checked workbook files.
+通常実行では期待結果CSVを再生成し、不足しているチェック済みworkbookだけを作成します。既存のチェック済みworkbookを置き換える場合だけ `--force` を使います。
 
-Use `--render` when a visual render pass is needed in an environment where artifact-tool rendering is available with a clean exit status.
+artifact-tool renderが利用できる環境で視覚確認を行う場合は `--render` を使います。

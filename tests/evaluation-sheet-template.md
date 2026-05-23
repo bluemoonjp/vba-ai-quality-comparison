@@ -1,46 +1,46 @@
-# Evaluation Sheet Template
+# 評価表テンプレート
 
-Copy this file for each condition evaluation.
+各conditionの評価ごとに、このファイルをコピーして使います。
 
-## Condition
+## 条件
 
-- Condition id:
-- Evaluator:
-- Evaluation date:
-- Final output reference:
-- Verification evidence reference:
+- condition id:
+- 評価者:
+- 評価日:
+- 最終出力参照:
+- 検証証跡参照:
 
-## Score Table
+## 採点表
 
-Use `0-4` for each category. Every score requires evidence.
+各カテゴリを `0-4` で採点します。すべての点数に根拠または所見を添えます。
 
-| category | score | evidence / notes |
+| カテゴリ | 点数 | 根拠 / 所見 |
 | --- | --- | --- |
-| Correctness |  |  |
-| Subtotals |  |  |
-| Rerun safety |  |  |
-| Error handling |  |  |
-| Maintainability |  |  |
-| Excel/VBA fit |  |  |
-| Performance |  |  |
-| Explanation quality |  |  |
+| 正確性 |  |  |
+| 小計 |  |  |
+| 再実行安全性 |  |  |
+| エラー処理 |  |  |
+| 保守性 |  |  |
+| Excel/VBA適合性 |  |  |
+| 性能 |  |  |
+| 説明品質 |  |  |
 
-## Severe Defects
+## 重大欠陥
 
-List any defects that would block practical use even if the total score is acceptable.
+総合点が許容範囲でも、実用を妨げる欠陥があれば列挙します。
 
-## Not Run
+## 未実行
 
-List any checks that were not run and explain why.
+実行しなかった確認項目と、その理由を記録します。
 
-## Correction Impact
+## 修正依頼の影響
 
-Describe what changed after the single correction request and whether it improved the result.
+1回だけの修正依頼後に何が変わったか、結果が改善したかを記録します。
 
-## Contamination Or Fairness Notes
+## 汚染・公平性メモ
 
-Record any suspected exposure to prior outputs, unequal extra hints, or manual intervention.
+先行出力の混入、不均等な追加ヒント、人手介入の疑いがあれば記録します。
 
-## Overall Assessment
+## 総合所見
 
-Summarize strengths, weaknesses, and the main evidence. Do not rely on total score alone.
+強み、弱み、主な証跡をまとめます。総合点だけで判断しません。

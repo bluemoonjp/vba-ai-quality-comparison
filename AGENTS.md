@@ -1,34 +1,34 @@
-# vba-ai-quality-comparison Agent Rules
+# vba-ai-quality-comparison エージェントルール
 
-## Scope
+## 適用範囲
 
-These rules apply to this independent repository. Parent `_Workspace` rules still apply where they do not conflict.
+このルールは、この独立リポジトリ全体に適用します。親 `_Workspace` のルールも、矛盾しない範囲で適用します。
 
-## Public Data Boundary
+## 公開データ境界
 
-- Use only fictional, synthetic, publishable data.
-- Do not add real customer, employee, branch, business, complaint, file path, workbook metadata, screenshots, secrets, or private source material.
-- Treat `.xlsm` files as potentially sensitive until metadata and hidden content have been checked.
-- Follow `docs/public-boundary.md` before adding any workbook, prompt log, generated output, screenshot, or exported VBA artifact.
+- 架空で公開可能な合成データだけを使う。
+- 実在の顧客、社員、支店、業務、クレーム内容、実パス、workbookメタデータ、スクリーンショット、secret、private source materialを追加しない。
+- `.xlsm` は、メタデータと隠し内容を確認するまで高リスク成果物として扱う。
+- workbook、prompt log、生成物、スクリーンショット、exported VBAを追加する前に `docs/public-boundary.md` を確認する。
 
-## Experiment Integrity
+## 実験の一貫性
 
-- Compare AI usage patterns, not hidden human improvements.
-- Keep the same task specification, sample data, expected results, and evaluation rubric across all conditions.
-- Each condition gets at most one clarification question and one correction request.
-- Record prompts, clarification questions, answers, correction requests, model/mode/date, output, and verification notes.
-- Do not let later conditions see earlier generated solutions unless the experiment document explicitly marks the run as contaminated or learning-enabled.
+- 比較対象は、AIの使い方による成果物差であり、人手による隠れた改善ではない。
+- 全条件で同じ課題仕様、サンプルデータ、期待結果、評価基準を使う。
+- 各条件で許可するやり取りは、仕様確認1回と修正依頼1回まで。
+- prompt、確認質問、回答、修正依頼、モデル/モード/日付、出力、検証メモを記録する。
+- 先行条件の生成物やレビュー結果を後続条件へ見せない。見えてしまった場合は、実験汚染として記録する。
 
-## VBA And Excel Safety
+## VBAとExcelの安全性
 
-- Store reviewable VBA as exported `.bas` / `.cls` text files.
-- Do not run macros or write into existing workbooks without an explicit task and a clear target file.
-- Windows Excel verification is required for completion of VBA behavior checks.
-- Static review alone is not enough for final validation.
+- レビュー対象のVBAは `.bas` / `.cls` などのテキスト形式で保存する。
+- 明確なタスクと対象ファイルがない状態で、マクロ実行や既存workbookへの書き込みをしない。
+- VBAの動作検証はWindows版Excelを前提にする。
+- 静的レビューだけでは最終検証完了としない。
 
-## Git And GitHub
+## GitとGitHub
 
-- This directory is its own Git repository. Do not commit these files to the parent `_Workspace` repository.
-- Keep commits scoped to one meaningful issue or phase.
-- GitHub Issues are the task tracker for this repository.
-- Record scaffold and public-safety audit updates in `docs/scaffold-audit-issue-1.md` or the relevant later issue document.
+- このディレクトリは独立Gitリポジトリ。親 `_Workspace` にこのリポジトリのファイルをcommitしない。
+- commitは、意味のあるIssueまたはフェーズ単位に分ける。
+- GitHub Issuesをこのリポジトリの作業トラッカーとして使う。
+- scaffoldや公開安全点検は `docs/scaffold-audit-issue-1.md` または該当Issueの監査docsへ記録する。

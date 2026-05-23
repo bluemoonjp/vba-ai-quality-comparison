@@ -1,45 +1,45 @@
-# Public Boundary
+# 公開境界
 
-This repository is public by design. Every artifact must be safe to publish before it is committed.
+このリポジトリはPublic公開を前提にしています。commitする成果物は、すべて公開してよい内容である必要があります。
 
-## Allowed Artifacts
+## 追加してよい成果物
 
-- Synthetic workbook specifications, synthetic master data, and expected results.
-- Exported VBA source files such as `.bas` and `.cls`.
-- Prompts, generation logs, and review notes that have been sanitized for public release.
-- Sample workbooks only after the workbook checklist below is complete.
-- Documentation, rubrics, test cases, and comparison summaries that use fictional data.
+- 合成workbook仕様、合成マスタデータ、期待結果。
+- `.bas` や `.cls` などのexported VBA。
+- 公開用に整理したprompt、生成ログ、レビュー記録。
+- 公開前チェックを通過したサンプルworkbook。
+- 架空データだけを使ったdocs、評価基準、検証ケース、比較サマリ。
 
-## Disallowed Artifacts
+## 追加しない成果物
 
-- Real operational data, complaint contents, branch names, customer names, employee names, or company-specific identifiers.
-- Real local paths, user names, machine names, OneDrive paths, network paths, or internal file names.
-- Secrets, tokens, API responses, private connector output, or private source material.
-- Private screenshots or screenshots derived from real workbooks.
-- Unchecked Office binaries, including `.xls`, `.xlsx`, `.xlsm`, and `.xlsb`.
-- Workbook content that may hide private data, such as hidden sheets, comments, names, links, or document properties.
+- 実運用データ、実クレーム内容、実支店名、顧客名、社員名、会社固有の識別子。
+- 実ローカルパス、ユーザー名、端末名、OneDriveパス、ネットワークパス、社内ファイル名。
+- secret、token、APIレスポンス、private connector output、private source material。
+- private screenshot、実workbook由来のスクリーンショット。
+- 未確認のOfficeバイナリ。対象は `.xls`, `.xlsx`, `.xlsm`, `.xlsb` を含む。
+- 隠しシート、コメント、名前定義、リンク、ドキュメントプロパティなどに非公開情報を含む可能性があるworkbook。
 
-## Workbook Publication Checklist
+## Workbook公開前チェック
 
-Before any workbook is moved into `samples/checked/` and committed, verify:
+workbookを `samples/checked/` へ移してcommitする前に、次を確認します。
 
-- The workbook uses fictional data only.
-- Document properties and author metadata are cleared or intentionally public.
-- Hidden and very hidden sheets are reviewed.
-- Comments, notes, threaded comments, and cell metadata are reviewed.
-- Defined names, formulas, external links, pivot caches, connections, and queries do not contain real paths or private data.
-- VBA modules, forms, references, and constants do not contain real paths, private names, or secrets.
-- The workbook opens in Windows Excel and the intended macro/security behavior is documented.
-- The file name itself is safe to publish.
+- workbookが架空データだけを使っている。
+- ドキュメントプロパティと作成者メタデータが公開可能である。
+- hidden / very hidden sheetを確認済みである。
+- コメント、メモ、threaded comments、セルメタデータを確認済みである。
+- 名前定義、数式、外部リンク、pivot cache、connection、queryに実パスや非公開情報がない。
+- VBAモジュール、フォーム、参照設定、定数に実パス、非公開名、secretがない。
+- Windows版Excelで開き、想定するマクロ/セキュリティ挙動を説明できる。
+- ファイル名自体が公開可能である。
 
-## Git Boundary
+## Git境界
 
-This directory is an independent Git repository under the parent workspace. Commits, remotes, tags, and GitHub Issues belong to this repository unless explicitly stated otherwise.
+このディレクトリは、親workspace配下にある独立Gitリポジトリです。commit、remote、tag、GitHub Issueは、明示がない限りこのリポジトリに属します。
 
-Do not commit this repository's files into the parent workspace repository. Do not copy private parent workspace context into this repository.
+このリポジトリのファイルを親workspaceリポジトリへcommitしません。親workspaceのprivateな文脈をこの公開リポジトリへコピーしません。
 
-## Default Storage Rule
+## 既定の保存ルール
 
-Unchecked generated workbooks belong in ignored local scratch locations such as `samples/generated/` or `outputs/<condition>/scratch/`. Checked public workbooks may be placed in `samples/checked/` after the checklist is complete.
+未確認の生成workbookは `samples/generated/` や `outputs/<condition>/scratch/` などのignore済みscratch場所に置きます。公開前チェック済みworkbookだけを `samples/checked/` へ置けます。
 
-For Issue #3, `.xlsx` files generated from synthetic CSV sources and reviewed against this checklist are allowed in `samples/checked/`. `.xlsm` files remain deferred until the VBA implementation phase.
+Issue #3 では、合成CSVから生成し、このチェックに照らして確認した `.xlsx` を `samples/checked/` に置いています。`.xlsm` はVBA実装フェーズまで延期します。

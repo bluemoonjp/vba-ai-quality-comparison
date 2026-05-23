@@ -1,9 +1,9 @@
 business_code,business_name
-INQ,Inquiry Desk
-RSP,Response Desk
-REP,Repair Desk
-DEL,Delivery Desk
-BIL,Billing Desk
-APP,App Support
-CON,Contract Desk
-OTH,Other Desk
+INQ,問合せ受付
+RSP,初動対応
+REP,修理受付
+DEL,配送調整
+BIL,請求確認
+APP,アプリ支援
+CON,契約確認
+OTH,その他対応

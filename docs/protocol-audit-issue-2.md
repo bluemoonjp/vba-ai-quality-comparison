@@ -1,43 +1,43 @@
-# Protocol Audit For Issue #2
+# Issue #2 プロトコル監査
 
-Audit date: 2026-05-23
+監査日: 2026-05-23
 
-## Scope
+## 対象範囲
 
-Issue #2 fixes the experiment protocol, logging format, and evaluation scoring method. It does not run any AI condition, create Excel samples, or generate VBA.
+Issue #2 では、実験プロトコル、ログ形式、評価方式を固定しました。AI条件の実行、Excelサンプル作成、VBA生成は行っていません。
 
-## Decisions Fixed
+## 固定した判断
 
-- The experiment uses five stable condition ids:
+- 実験では、次の5つの安定した `condition id` を使う。
   - `chatgpt-instant`
   - `chatgpt-thinking-extended`
   - `codex-medium`
   - `codex-xhigh`
   - `codex-multi-agent-review`
-- Each condition may use at most one clarification question and one correction request.
-- Scoring uses `0-4` points per category plus mandatory evidence notes.
-- Total score is supporting information, not the sole conclusion.
-- Severe defects, not-run checks, correction impact, and fairness/contamination notes must be recorded.
+- 各条件で許可するやり取りは、仕様確認1回と修正依頼1回まで。
+- 採点はカテゴリごとに `0-4` 点とし、根拠メモを必須にする。
+- 総合点は補助情報であり、それだけで結論を出さない。
+- 重大欠陥、未実行項目、修正効果、公平性/汚染メモを記録する。
 
-## Templates Added
+## 追加したテンプレート
 
 - `outputs/run-log-template.md`
 - `tests/evaluation-sheet-template.md`
 
-These templates are the default starting points for Issue #5 generation logs and Issue #6 verification/evaluation records.
+これらは、Issue #5 の生成ログと Issue #6 の検証/評価記録の標準テンプレートです。
 
-## Deferred Work
+## 後続作業
 
-- Common task prompt finalization remains dependent on Issue #4.
-- Synthetic workbook/sample creation remains dependent on Issue #3.
-- Actual condition execution remains dependent on Issue #5.
-- Windows Excel verification remains dependent on Issue #6.
+- 共通promptの最終化は Issue #4 に依存。
+- 合成workbook/sample作成は Issue #3 に依存。
+- 実際のAI条件実行は Issue #5 に依存。
+- Windows版Excelでの検証は Issue #6 に依存。
 
-## Closeout Criteria
+## 完了条件
 
-Issue #2 is complete when:
+Issue #2 は、次の状態で完了としました。
 
-- The protocol can be followed without choosing additional rules.
-- The scoring scale and category evidence requirements are documented.
-- The run-log and evaluation templates are available.
-- No AI execution, Excel sample, or VBA implementation is introduced by this issue.
+- 追加判断なしでプロトコルを実行できる。
+- 採点尺度とカテゴリ別根拠の記録ルールが文書化されている。
+- run-logと評価表テンプレートが用意されている。
+- AI実行、Excelサンプル、VBA実装をこのIssueで行っていない。

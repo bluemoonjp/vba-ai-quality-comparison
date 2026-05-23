@@ -1,82 +1,82 @@
 month,row_type,subtotal_group,region,branch_code,branch_name,business_code,business_name,day_01,day_02,day_03,day_04,day_05,day_06,day_07,day_08,day_09,day_10,day_11,day_12,day_13,day_14,day_15,day_16,day_17,day_18,day_19,day_20,day_21,day_22,day_23,day_24,day_25,day_26,day_27,day_28,day_29,day_30,day_31,month_total,note
-2026-02,DETAIL,BR01,North,BR01,Aster Central,INQ,Inquiry Desk,3,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,
-2026-02,DETAIL,BR01,North,BR01,Aster Central,RSP,Response Desk,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-02,DETAIL,BR01,North,BR01,Aster Central,REP,Repair Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,BR01,North,BR01,Aster Central,BIL,Billing Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,SUBTOTAL,BR01,North,,Aster Central subtotal,,,4,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,6,subtotal row; not an input key
-2026-02,DETAIL,North Small,North,BR02,Beryl Annex,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,North Small,North,BR02,Beryl Annex,DEL,Delivery Desk,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-02,DETAIL,North Small,North,BR02,Beryl Annex,APP,App Support,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-02,SUBTOTAL,North Small,North,,North small-branch subtotal,,,2,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,3,subtotal row; not an input key
-2026-02,DETAIL,East Small,East,BR03,Cobalt East,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,East Small,East,BR03,Cobalt East,RSP,Response Desk,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-02,DETAIL,East Small,East,BR03,Cobalt East,CON,Contract Desk,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
-2026-02,SUBTOTAL,East Small,East,,East small-branch subtotal,,,,3,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,5,subtotal row; not an input key
-2026-02,DETAIL,BR04,East,BR04,Dahlia Hub,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,BR04,East,BR04,Dahlia Hub,RSP,Response Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,BR04,East,BR04,Dahlia Hub,REP,Repair Desk,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,
-2026-02,DETAIL,BR04,East,BR04,Dahlia Hub,DEL,Delivery Desk,,,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
-2026-02,DETAIL,BR04,East,BR04,Dahlia Hub,BIL,Billing Desk,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-02,SUBTOTAL,BR04,East,,Dahlia Hub subtotal,,,5,1,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,9,subtotal row; not an input key
-2026-02,DETAIL,South Small,South,BR05,Elm South,INQ,Inquiry Desk,,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,
-2026-02,DETAIL,South Small,South,BR05,Elm South,APP,App Support,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-02,DETAIL,South Small,South,BR05,Elm South,CON,Contract Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,South Small,South,BR05,Elm South,OTH,Other Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,SUBTOTAL,South Small,South,,South small-branch subtotal,,,3,4,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,8,subtotal row; not an input key
-2026-02,DETAIL,South Small,South,BR06,Fennel South,RSP,Response Desk,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-02,DETAIL,South Small,South,BR06,Fennel South,DEL,Delivery Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-02,DETAIL,South Small,South,BR06,Fennel South,OTH,Other Desk,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-04,DETAIL,BR01,North,BR01,Aster Central,INQ,Inquiry Desk,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-04,DETAIL,BR01,North,BR01,Aster Central,RSP,Response Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,1,
-2026-04,DETAIL,BR01,North,BR01,Aster Central,REP,Repair Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,DETAIL,BR01,North,BR01,Aster Central,BIL,Billing Desk,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-04,SUBTOTAL,BR01,North,,Aster Central subtotal,,,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,5,subtotal row; not an input key
-2026-04,DETAIL,North Small,North,BR02,Beryl Annex,INQ,Inquiry Desk,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-04,DETAIL,North Small,North,BR02,Beryl Annex,DEL,Delivery Desk,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,,,3,
-2026-04,DETAIL,North Small,North,BR02,Beryl Annex,APP,App Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,SUBTOTAL,North Small,North,,North small-branch subtotal,,,1,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,,,4,subtotal row; not an input key
-2026-04,DETAIL,East Small,East,BR03,Cobalt East,INQ,Inquiry Desk,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-04,DETAIL,East Small,East,BR03,Cobalt East,RSP,Response Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,DETAIL,East Small,East,BR03,Cobalt East,CON,Contract Desk,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,1,
-2026-04,SUBTOTAL,East Small,East,,East small-branch subtotal,,,,1,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,2,subtotal row; not an input key
-2026-04,DETAIL,BR04,East,BR04,Dahlia Hub,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,DETAIL,BR04,East,BR04,Dahlia Hub,RSP,Response Desk,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,
-2026-04,DETAIL,BR04,East,BR04,Dahlia Hub,REP,Repair Desk,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-04,DETAIL,BR04,East,BR04,Dahlia Hub,DEL,Delivery Desk,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,2,
-2026-04,DETAIL,BR04,East,BR04,Dahlia Hub,BIL,Billing Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,2,
-2026-04,SUBTOTAL,BR04,East,,Dahlia Hub subtotal,,,4,2,,,,,,,,,,,,,2,,,,,,,,,,,,,,,2,,10,subtotal row; not an input key
-2026-04,DETAIL,South Small,South,BR05,Elm South,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,DETAIL,South Small,South,BR05,Elm South,APP,App Support,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,2,
-2026-04,DETAIL,South Small,South,BR05,Elm South,CON,Contract Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,DETAIL,South Small,South,BR05,Elm South,OTH,Other Desk,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
-2026-04,SUBTOTAL,South Small,South,,South small-branch subtotal,,,3,5,,,,,,,,,,,,,2,,,,,,,,,,,,,,,4,,14,subtotal row; not an input key
-2026-04,DETAIL,South Small,South,BR06,Fennel South,RSP,Response Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-04,DETAIL,South Small,South,BR06,Fennel South,DEL,Delivery Desk,,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,
-2026-04,DETAIL,South Small,South,BR06,Fennel South,OTH,Other Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,,4,
-2026-05,DETAIL,BR01,North,BR01,Aster Central,INQ,Inquiry Desk,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
-2026-05,DETAIL,BR01,North,BR01,Aster Central,RSP,Response Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,BR01,North,BR01,Aster Central,REP,Repair Desk,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,
-2026-05,DETAIL,BR01,North,BR01,Aster Central,BIL,Billing Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,5,
-2026-05,SUBTOTAL,BR01,North,,Aster Central subtotal,,,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,10,subtotal row; not an input key
-2026-05,DETAIL,North Small,North,BR02,Beryl Annex,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,North Small,North,BR02,Beryl Annex,DEL,Delivery Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,North Small,North,BR02,Beryl Annex,APP,App Support,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
-2026-05,SUBTOTAL,North Small,North,,North small-branch subtotal,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,subtotal row; not an input key
-2026-05,DETAIL,East Small,East,BR03,Cobalt East,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,East Small,East,BR03,Cobalt East,RSP,Response Desk,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,2,
-2026-05,DETAIL,East Small,East,BR03,Cobalt East,CON,Contract Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,SUBTOTAL,East Small,East,,East small-branch subtotal,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,2,subtotal row; not an input key
-2026-05,DETAIL,BR04,East,BR04,Dahlia Hub,INQ,Inquiry Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,BR04,East,BR04,Dahlia Hub,RSP,Response Desk,,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,,3,
-2026-05,DETAIL,BR04,East,BR04,Dahlia Hub,REP,Repair Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,
-2026-05,DETAIL,BR04,East,BR04,Dahlia Hub,DEL,Delivery Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,2,
-2026-05,DETAIL,BR04,East,BR04,Dahlia Hub,BIL,Billing Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,SUBTOTAL,BR04,East,,Dahlia Hub subtotal,,,,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,3,6,subtotal row; not an input key
-2026-05,DETAIL,South Small,South,BR05,Elm South,INQ,Inquiry Desk,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,1,
-2026-05,DETAIL,South Small,South,BR05,Elm South,APP,App Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,South Small,South,BR05,Elm South,CON,Contract Desk,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
-2026-05,DETAIL,South Small,South,BR05,Elm South,OTH,Other Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,SUBTOTAL,South Small,South,,South small-branch subtotal,,,3,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,3,9,subtotal row; not an input key
-2026-05,DETAIL,South Small,South,BR06,Fennel South,RSP,Response Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2026-05,DETAIL,South Small,South,BR06,Fennel South,DEL,Delivery Desk,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,2,
-2026-05,DETAIL,South Small,South,BR06,Fennel South,OTH,Other Desk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,3,
+2026-02,DETAIL,BR01,北部,BR01,あかね中央支店,INQ,問合せ受付,3,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,
+2026-02,DETAIL,BR01,北部,BR01,あかね中央支店,RSP,初動対応,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-02,DETAIL,BR01,北部,BR01,あかね中央支店,REP,修理受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,BR01,北部,BR01,あかね中央支店,BIL,請求確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,SUBTOTAL,BR01,北部,,あかね中央支店 小計,,,4,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,6,小計行。入力キーではありません。
+2026-02,DETAIL,北部小支店,北部,BR02,ひすい北支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,北部小支店,北部,BR02,ひすい北支店,DEL,配送調整,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-02,DETAIL,北部小支店,北部,BR02,ひすい北支店,APP,アプリ支援,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-02,SUBTOTAL,北部小支店,北部,,北部小支店 小計,,,2,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,3,小計行。入力キーではありません。
+2026-02,DETAIL,東部小支店,東部,BR03,こはく東支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,東部小支店,東部,BR03,こはく東支店,RSP,初動対応,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-02,DETAIL,東部小支店,東部,BR03,こはく東支店,CON,契約確認,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
+2026-02,SUBTOTAL,東部小支店,東部,,東部小支店 小計,,,,3,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,5,小計行。入力キーではありません。
+2026-02,DETAIL,BR04,東部,BR04,だりあ東支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,BR04,東部,BR04,だりあ東支店,RSP,初動対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,BR04,東部,BR04,だりあ東支店,REP,修理受付,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,
+2026-02,DETAIL,BR04,東部,BR04,だりあ東支店,DEL,配送調整,,,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
+2026-02,DETAIL,BR04,東部,BR04,だりあ東支店,BIL,請求確認,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-02,SUBTOTAL,BR04,東部,,だりあ東支店 小計,,,5,1,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,9,小計行。入力キーではありません。
+2026-02,DETAIL,南部小支店,南部,BR05,えのき南支店,INQ,問合せ受付,,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,
+2026-02,DETAIL,南部小支店,南部,BR05,えのき南支店,APP,アプリ支援,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-02,DETAIL,南部小支店,南部,BR05,えのき南支店,CON,契約確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,南部小支店,南部,BR05,えのき南支店,OTH,その他対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,SUBTOTAL,南部小支店,南部,,南部小支店 小計,,,3,4,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,8,小計行。入力キーではありません。
+2026-02,DETAIL,南部小支店,南部,BR06,ふじ南支店,RSP,初動対応,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-02,DETAIL,南部小支店,南部,BR06,ふじ南支店,DEL,配送調整,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-02,DETAIL,南部小支店,南部,BR06,ふじ南支店,OTH,その他対応,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-04,DETAIL,BR01,北部,BR01,あかね中央支店,INQ,問合せ受付,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-04,DETAIL,BR01,北部,BR01,あかね中央支店,RSP,初動対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,1,
+2026-04,DETAIL,BR01,北部,BR01,あかね中央支店,REP,修理受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,DETAIL,BR01,北部,BR01,あかね中央支店,BIL,請求確認,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-04,SUBTOTAL,BR01,北部,,あかね中央支店 小計,,,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,5,小計行。入力キーではありません。
+2026-04,DETAIL,北部小支店,北部,BR02,ひすい北支店,INQ,問合せ受付,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-04,DETAIL,北部小支店,北部,BR02,ひすい北支店,DEL,配送調整,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,,,3,
+2026-04,DETAIL,北部小支店,北部,BR02,ひすい北支店,APP,アプリ支援,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,SUBTOTAL,北部小支店,北部,,北部小支店 小計,,,1,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,,,4,小計行。入力キーではありません。
+2026-04,DETAIL,東部小支店,東部,BR03,こはく東支店,INQ,問合せ受付,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-04,DETAIL,東部小支店,東部,BR03,こはく東支店,RSP,初動対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,DETAIL,東部小支店,東部,BR03,こはく東支店,CON,契約確認,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,1,
+2026-04,SUBTOTAL,東部小支店,東部,,東部小支店 小計,,,,1,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,2,小計行。入力キーではありません。
+2026-04,DETAIL,BR04,東部,BR04,だりあ東支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,DETAIL,BR04,東部,BR04,だりあ東支店,RSP,初動対応,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,
+2026-04,DETAIL,BR04,東部,BR04,だりあ東支店,REP,修理受付,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-04,DETAIL,BR04,東部,BR04,だりあ東支店,DEL,配送調整,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,2,
+2026-04,DETAIL,BR04,東部,BR04,だりあ東支店,BIL,請求確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,2,
+2026-04,SUBTOTAL,BR04,東部,,だりあ東支店 小計,,,4,2,,,,,,,,,,,,,2,,,,,,,,,,,,,,,2,,10,小計行。入力キーではありません。
+2026-04,DETAIL,南部小支店,南部,BR05,えのき南支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,DETAIL,南部小支店,南部,BR05,えのき南支店,APP,アプリ支援,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,2,
+2026-04,DETAIL,南部小支店,南部,BR05,えのき南支店,CON,契約確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,DETAIL,南部小支店,南部,BR05,えのき南支店,OTH,その他対応,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
+2026-04,SUBTOTAL,南部小支店,南部,,南部小支店 小計,,,3,5,,,,,,,,,,,,,2,,,,,,,,,,,,,,,4,,14,小計行。入力キーではありません。
+2026-04,DETAIL,南部小支店,南部,BR06,ふじ南支店,RSP,初動対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-04,DETAIL,南部小支店,南部,BR06,ふじ南支店,DEL,配送調整,,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,
+2026-04,DETAIL,南部小支店,南部,BR06,ふじ南支店,OTH,その他対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,,4,
+2026-05,DETAIL,BR01,北部,BR01,あかね中央支店,INQ,問合せ受付,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,
+2026-05,DETAIL,BR01,北部,BR01,あかね中央支店,RSP,初動対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,BR01,北部,BR01,あかね中央支店,REP,修理受付,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,
+2026-05,DETAIL,BR01,北部,BR01,あかね中央支店,BIL,請求確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,5,
+2026-05,SUBTOTAL,BR01,北部,,あかね中央支店 小計,,,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,10,小計行。入力キーではありません。
+2026-05,DETAIL,北部小支店,北部,BR02,ひすい北支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,北部小支店,北部,BR02,ひすい北支店,DEL,配送調整,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,北部小支店,北部,BR02,ひすい北支店,APP,アプリ支援,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,
+2026-05,SUBTOTAL,北部小支店,北部,,北部小支店 小計,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,小計行。入力キーではありません。
+2026-05,DETAIL,東部小支店,東部,BR03,こはく東支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,東部小支店,東部,BR03,こはく東支店,RSP,初動対応,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,2,
+2026-05,DETAIL,東部小支店,東部,BR03,こはく東支店,CON,契約確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,SUBTOTAL,東部小支店,東部,,東部小支店 小計,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,2,小計行。入力キーではありません。
+2026-05,DETAIL,BR04,東部,BR04,だりあ東支店,INQ,問合せ受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,BR04,東部,BR04,だりあ東支店,RSP,初動対応,,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,,3,
+2026-05,DETAIL,BR04,東部,BR04,だりあ東支店,REP,修理受付,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,
+2026-05,DETAIL,BR04,東部,BR04,だりあ東支店,DEL,配送調整,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,2,
+2026-05,DETAIL,BR04,東部,BR04,だりあ東支店,BIL,請求確認,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,SUBTOTAL,BR04,東部,,だりあ東支店 小計,,,,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,3,6,小計行。入力キーではありません。
+2026-05,DETAIL,南部小支店,南部,BR05,えのき南支店,INQ,問合せ受付,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,1,
+2026-05,DETAIL,南部小支店,南部,BR05,えのき南支店,APP,アプリ支援,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,南部小支店,南部,BR05,えのき南支店,CON,契約確認,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,
+2026-05,DETAIL,南部小支店,南部,BR05,えのき南支店,OTH,その他対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,SUBTOTAL,南部小支店,南部,,南部小支店 小計,,,3,,,,,,,,,,,,,,,3,,,,,,,,,,,,,,,3,9,小計行。入力キーではありません。
+2026-05,DETAIL,南部小支店,南部,BR06,ふじ南支店,RSP,初動対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026-05,DETAIL,南部小支店,南部,BR06,ふじ南支店,DEL,配送調整,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,2,
+2026-05,DETAIL,南部小支店,南部,BR06,ふじ南支店,OTH,その他対応,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,3,

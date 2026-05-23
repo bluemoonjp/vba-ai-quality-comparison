@@ -1,12 +1,12 @@
-# Results Summary
+# 結果サマリ
 
-Results will be added after all AI conditions have been run and verified.
+すべてのAI条件を実行・検証したあとに、ここへ結果をまとめます。
 
-Expected contents:
+記載予定:
 
-- condition summary table
-- score and evidence by rubric category
-- representative failure modes
-- correction-request impact
-- final observations about AI usage pattern differences
-- reproduction notes
+- 条件別サマリ表
+- 評価カテゴリ別の点数と根拠
+- 代表的な失敗パターン
+- 1回の修正依頼による改善
+- AIの使い方ごとの違いに関する観察
+- 再現手順と制限

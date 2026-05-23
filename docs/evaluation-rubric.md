@@ -1,40 +1,40 @@
-# Evaluation Rubric
+# 評価基準
 
-Each AI condition is evaluated with the same checklist and evidence.
+各AI条件は、同じチェックリストと証跡で評価します。
 
-## Scoring Scale
+## 採点尺度
 
-Each category is scored from `0` to `4`.
+各カテゴリを `0` から `4` で採点します。
 
-| score | meaning |
+| 点数 | 意味 |
 | --- | --- |
-| 0 | Missing, unusable, or unsafe for the category. |
-| 1 | Major defects; works only in narrow or accidental cases. |
-| 2 | Partially adequate; important gaps remain. |
-| 3 | Good; minor gaps or risks remain. |
-| 4 | Strong; meets the expected behavior with clear evidence. |
+| 0 | そのカテゴリが欠落、使用不能、または危険。 |
+| 1 | 重大な欠陥があり、ごく限定的なケースでしか成立しない。 |
+| 2 | 一部は成立するが、重要な欠落が残る。 |
+| 3 | 概ね良いが、軽微な欠落やリスクが残る。 |
+| 4 | 期待動作を満たし、証跡も明確。 |
 
-Every score must include a short evidence note. Do not use the total score alone as the conclusion; also record severe defects, failure patterns, and correction-request impact.
+各点数には短い根拠メモを必ず添えます。総合点だけで結論を出さず、重大欠陥、失敗パターン、修正依頼による改善も別に記録します。
 
-## Categories
+## 評価カテゴリ
 
-| category | focus |
+| カテゴリ | 観点 |
 | --- | --- |
-| Correctness | Transfers daily counts to the correct branch, business, and day cells. |
-| Subtotals | Handles large-branch and regional subtotal rules correctly. |
-| Rerun safety | Produces predictable results when run more than once. |
-| Error handling | Handles missing files, unknown keys, blank counts, non-numeric counts, and filename mismatches. |
-| Maintainability | Uses clear procedures, names, constants, and separable responsibilities. |
-| Excel/VBA fit | Avoids fragile active-object usage and restores Excel application state. |
-| Performance | Reads workbook data without unnecessary cell-by-cell overhead where practical. |
-| Explanation quality | Explains assumptions, usage, limitations, and test approach. |
+| 正確性 | 日次件数を正しい支店、業務、日付セルへ転記できるか。 |
+| 小計 | 大支店小計と地域小計のルールを正しく扱えるか。 |
+| 再実行安全性 | 同じデータで再実行しても二重計上しないか。 |
+| エラー処理 | 欠損ファイル、未知キー、空欄件数、非数値件数、ファイル名不一致を扱えるか。 |
+| 保守性 | 手続き分割、命名、定数化、責務分離が読みやすいか。 |
+| Excel/VBA適合性 | `ActiveWorkbook` 依存などを避け、Excelの状態を復元できるか。 |
+| 性能 | 不必要なセル単位処理を避け、実用的に読み込めるか。 |
+| 説明品質 | 前提、使い方、制限、テスト観点を説明できているか。 |
 
-## Required Evaluation Notes
+## 必須記録
 
-For each condition, record:
+各条件について、次を記録します。
 
-- category scores and evidence
-- not-run items and reasons
-- severe defects that would block practical use
-- whether the single correction request improved the output
-- any suspected contamination or unequal information exposure
+- カテゴリ別点数と根拠
+- 実行しなかった検証項目と理由
+- 実用を妨げる重大欠陥
+- 1回の修正依頼で改善した点
+- 実験汚染や情報量の不公平が疑われる点

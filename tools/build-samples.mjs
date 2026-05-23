@@ -135,8 +135,8 @@ function buildLayoutRows(branches, businesses) {
     if (!subtotalSeen.has(branch.subtotal_group)) {
       subtotalSeen.add(branch.subtotal_group);
       const label = branch.branch_size === "large"
-        ? `${branch.branch_name} subtotal`
-        : `${branch.region} small-branch subtotal`;
+        ? `${branch.branch_name} 小計`
+        : `${branch.subtotal_group} 小計`;
       rows.push({
         row_type: "SUBTOTAL",
         subtotal_group: branch.subtotal_group,
@@ -145,7 +145,7 @@ function buildLayoutRows(branches, businesses) {
         branch_name: label,
         business_code: "",
         business_name: "",
-        note: "subtotal row; not an input key",
+        note: "小計行。入力キーではありません。",
       });
     }
   }
@@ -220,13 +220,13 @@ function anomalyCsvRows(records) {
       lines.push(csvLine([
         meta.month, `${meta.month}-${String(day).padStart(2, "0")}`,
         `クレーム集計${yymmdd}.xlsx`, "", "", "missing_day",
-        "no transfer; day column remains blank",
+        "転記なし。日付列は空欄のまま",
       ]));
     }
     for (let day = meta.daysInMonth + 1; day <= 31; day += 1) {
       lines.push(csvLine([
         meta.month, "", "", "", "", "out_of_month_day_column",
-        `day ${day} remains blank for ${meta.month}`,
+        `${meta.month} の ${day} 日列は空欄のまま`,
       ]));
     }
   }
@@ -355,18 +355,30 @@ function addMonthlySheet(workbook, sheetName, month, rows, includeExpected) {
 
 function addMasterSheet(workbook, branches, businesses, layoutRows) {
   const sheet = workbook.worksheets.add("マスタ");
-  setValues(sheet, 1, 1, [["Branch master"]]);
-  setValues(sheet, 2, 1, [[...Object.keys(branches[0])], ...branches.map((branch) => Object.values(branch))]);
-  formatTable(sheet, 2, 1, branches.length + 1, Object.keys(branches[0]).length);
+  setValues(sheet, 1, 1, [["支店マスタ"]]);
+  setValues(sheet, 2, 1, [
+    ["支店コード", "支店名", "地域", "支店区分", "小計グループ"],
+    ...branches.map((branch) => [
+      branch.branch_code,
+      branch.branch_name,
+      branch.region,
+      branch.branch_size === "large" ? "大支店" : "小支店",
+      branch.subtotal_group,
+    ]),
+  ]);
+  formatTable(sheet, 2, 1, branches.length + 1, 5);
 
-  setValues(sheet, 11, 1, [["Business line master"]]);
-  setValues(sheet, 12, 1, [[...Object.keys(businesses[0])], ...businesses.map((business) => Object.values(business))]);
-  formatTable(sheet, 12, 1, businesses.length + 1, Object.keys(businesses[0]).length);
+  setValues(sheet, 11, 1, [["業務マスタ"]]);
+  setValues(sheet, 12, 1, [
+    ["業務コード", "業務名"],
+    ...businesses.map((business) => [business.business_code, business.business_name]),
+  ]);
+  formatTable(sheet, 12, 1, businesses.length + 1, 2);
 
   const detailRows = layoutRows.filter((row) => row.row_type === "DETAIL");
-  setValues(sheet, 23, 1, [["Supported branch/business combinations"]]);
+  setValues(sheet, 23, 1, [["支店・業務対応表"]]);
   setValues(sheet, 24, 1, [
-    ["branch_code", "branch_name", "business_code", "business_name", "subtotal_group"],
+    ["支店コード", "支店名", "業務コード", "業務名", "小計グループ"],
     ...detailRows.map((row) => [row.branch_code, row.branch_name, row.business_code, row.business_name, row.subtotal_group]),
   ]);
   formatTable(sheet, 24, 1, detailRows.length + 1, 5);
@@ -376,8 +388,9 @@ function addMasterSheet(workbook, branches, businesses, layoutRows) {
 function addAnomalySheet(workbook, anomalies, month) {
   const sheet = workbook.worksheets.add("異常系");
   const headers = ["month", "date", "file_name", "subfolder", "row_no", "issue_type", "expected_behavior"];
+  const displayHeaders = ["対象月", "日付", "ファイル名", "サブフォルダ", "行番号", "異常種別", "期待動作"];
   const rows = anomalies.filter((row) => row.month === month);
-  setValues(sheet, 1, 1, [headers, ...rows.map((row) => headers.map((header) => row[header]))]);
+  setValues(sheet, 1, 1, [displayHeaders, ...rows.map((row) => headers.map((header) => row[header]))]);
   formatTable(sheet, 1, 1, rows.length + 1, headers.length);
   sheet.getRange("A:G").format.autofitColumns();
 }
@@ -432,7 +445,7 @@ async function main() {
     await buildMonthlyWorkbook(meta.month, rows, branches, businesses, layoutRows, anomalies, outputPath);
   }
 
-  console.log(`Generated ${groups.size} daily workbooks and ${months.length} monthly workbooks.`);
+  console.log(`日次workbook ${groups.size}件、月次workbook ${months.length}件を生成しました。`);
 }
 
 try {
