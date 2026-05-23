@@ -16,3 +16,5 @@ Verification scenarios should cover:
 - filename date mismatch
 
 Record results consistently for every AI condition.
+
+Use `evaluation-sheet-template.md` as the starting point for condition scoring and evidence notes.

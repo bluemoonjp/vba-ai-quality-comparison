@@ -11,4 +11,6 @@ Each condition folder should include:
 - final output
 - verification notes
 
+Use `run-log-template.md` as the starting point for each condition.
+
 Do not store private screenshots, real workbooks, real paths, or unreviewed logs.
