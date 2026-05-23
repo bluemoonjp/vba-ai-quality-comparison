@@ -1,0 +1,22 @@
+# Office temporary files
+~$*
+*.tmp
+
+# Local/generated workbooks that have not been public-safety checked
+samples/generated/
+outputs/**/scratch/
+
+# Local tool state
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs that may contain local paths
+*.log
+
+# Keep exported VBA and curated sample workbooks reviewable before commit.
+!src/**/*.bas
+!src/**/*.cls
+!samples/**/*.md
+!samples/**/*.csv
