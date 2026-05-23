@@ -19,6 +19,8 @@ Any workbook committed here must pass the public-safety checklist in the reposit
 - `source/business-lines.csv`: fictional business line master.
 - `source/daily-records.csv`: source rows used to generate daily workbook samples.
 
+The AI-facing task specification is `../docs/task-spec.md`. The prompt used for every AI condition is `../prompts/common-task-prompt.md`.
+
 ## Expected Results
 
 - `expected/monthly-expected.csv`: expected monthly transfer results for valid source rows.

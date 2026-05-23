@@ -22,6 +22,8 @@ The monthly workbook layout always includes day columns `1` through `31` plus a 
 
 Checked `.xlsx` workbooks in `samples/checked/` are regenerated artifacts, not the primary source of truth.
 
+The AI-facing task specification is fixed in `docs/task-spec.md`, and the copy-ready prompt is fixed in `prompts/common-task-prompt.md`.
+
 ## Branch Master
 
 The sample uses six fictional branches across three fictional regions.
