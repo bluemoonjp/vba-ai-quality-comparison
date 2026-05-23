@@ -25,6 +25,7 @@ outputs/**/scratch/
 Thumbs.db
 .vscode/
 .idea/
+node_modules/
 
 # Logs that may contain local paths
 *.log

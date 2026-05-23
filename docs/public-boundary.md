@@ -41,3 +41,5 @@ Do not commit this repository's files into the parent workspace repository. Do n
 ## Default Storage Rule
 
 Unchecked generated workbooks belong in ignored local scratch locations such as `samples/generated/` or `outputs/<condition>/scratch/`. Checked public workbooks may be placed in `samples/checked/` after the checklist is complete.
+
+For Issue #3, `.xlsx` files generated from synthetic CSV sources and reviewed against this checklist are allowed in `samples/checked/`. `.xlsm` files remain deferred until the VBA implementation phase.

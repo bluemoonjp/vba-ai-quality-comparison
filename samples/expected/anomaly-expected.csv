@@ -1,0 +1,14 @@
+month,date,file_name,subfolder,row_no,issue_type,expected_behavior
+2026-02,2026-02-02,クレーム集計260202.xlsx,incoming-a,5,unknown_branch,skip and log unknown branch
+2026-02,2026-02-05,クレーム集計260205.xlsx,incoming-b,5,non_numeric_count,skip and log non numeric count
+2026-02,2026-02-05,クレーム集計260205.xlsx,incoming-b,6,blank_count,skip and log blank count
+2026-04,2026-04-02,クレーム集計260402.xlsx,incoming-b,1,duplicate_file,skip duplicate day file
+2026-04,2026-04-02,クレーム集計260402.xlsx,incoming-b,2,duplicate_file,skip duplicate day file
+2026-04,2026-04-30,クレーム集計260430.xlsx,incoming-b,4,unknown_business,skip and log unknown business
+2026-02,2026-02-03,クレーム集計260203.xlsx,,,missing_day,no transfer; day column remains blank
+2026-02,,,,,out_of_month_day_column,day 29 remains blank for 2026-02
+2026-02,,,,,out_of_month_day_column,day 30 remains blank for 2026-02
+2026-02,,,,,out_of_month_day_column,day 31 remains blank for 2026-02
+2026-04,2026-04-03,クレーム集計260403.xlsx,,,missing_day,no transfer; day column remains blank
+2026-04,,,,,out_of_month_day_column,day 31 remains blank for 2026-04
+2026-05,2026-05-02,クレーム集計260502.xlsx,,,missing_day,no transfer; day column remains blank

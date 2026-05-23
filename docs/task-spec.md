@@ -18,7 +18,7 @@ The macro reads daily files for the target month and transfers complaint counts 
 
 ## Daily Layout
 
-The exact synthetic workbook layout will be defined in sample data work. It must include:
+The synthetic workbook layout is defined in `docs/sample-data-spec.md`. It includes:
 
 - branch
 - business line
@@ -39,3 +39,4 @@ The exact synthetic workbook layout will be defined in sample data work. It must
 - Real operational data.
 - Production deployment.
 - Replacing the workbook design with another reporting system.
+- Creating `.xlsm` files before the VBA implementation phase.

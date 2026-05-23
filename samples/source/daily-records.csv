@@ -1,0 +1,48 @@
+month,date,subfolder,file_name,row_no,status,branch_code,branch_name,business_code,business_name,complaint_count,note
+2026-02,2026-02-01,incoming-a,クレーム集計260201.xlsx,1,ok,BR01,Aster Central,INQ,Inquiry Desk,3,normal
+2026-02,2026-02-01,incoming-a,クレーム集計260201.xlsx,2,ok,BR01,Aster Central,RSP,Response Desk,1,normal
+2026-02,2026-02-01,incoming-a,クレーム集計260201.xlsx,3,ok,BR02,Beryl Annex,DEL,Delivery Desk,2,normal
+2026-02,2026-02-01,incoming-a,クレーム集計260201.xlsx,4,ok,BR04,Dahlia Hub,REP,Repair Desk,5,normal
+2026-02,2026-02-01,incoming-a,クレーム集計260201.xlsx,5,ok,BR05,Elm South,APP,App Support,1,normal
+2026-02,2026-02-01,incoming-a,クレーム集計260201.xlsx,6,ok,BR06,Fennel South,OTH,Other Desk,2,normal
+2026-02,2026-02-02,incoming-a,クレーム集計260202.xlsx,1,ok,BR01,Aster Central,INQ,Inquiry Desk,2,normal
+2026-02,2026-02-02,incoming-a,クレーム集計260202.xlsx,2,ok,BR03,Cobalt East,CON,Contract Desk,3,normal
+2026-02,2026-02-02,incoming-a,クレーム集計260202.xlsx,3,ok,BR04,Dahlia Hub,BIL,Billing Desk,1,normal
+2026-02,2026-02-02,incoming-a,クレーム集計260202.xlsx,4,ok,BR05,Elm South,INQ,Inquiry Desk,4,normal
+2026-02,2026-02-02,incoming-a,クレーム集計260202.xlsx,5,unknown_branch,BR99,Unknown Branch,INQ,Inquiry Desk,7,skip and log unknown branch
+2026-02,2026-02-05,incoming-b,クレーム集計260205.xlsx,1,ok,BR02,Beryl Annex,APP,App Support,1,normal
+2026-02,2026-02-05,incoming-b,クレーム集計260205.xlsx,2,ok,BR03,Cobalt East,RSP,Response Desk,2,normal
+2026-02,2026-02-05,incoming-b,クレーム集計260205.xlsx,3,ok,BR04,Dahlia Hub,DEL,Delivery Desk,3,normal
+2026-02,2026-02-05,incoming-b,クレーム集計260205.xlsx,4,ok,BR06,Fennel South,RSP,Response Desk,1,normal
+2026-02,2026-02-05,incoming-b,クレーム集計260205.xlsx,5,non_numeric_count,BR01,Aster Central,REP,Repair Desk,abc,skip and log non numeric count
+2026-02,2026-02-05,incoming-b,クレーム集計260205.xlsx,6,blank_count,BR05,Elm South,CON,Contract Desk,,skip and log blank count
+2026-04,2026-04-01,incoming-a,クレーム集計260401.xlsx,1,ok,BR01,Aster Central,BIL,Billing Desk,2,normal
+2026-04,2026-04-01,incoming-a,クレーム集計260401.xlsx,2,ok,BR02,Beryl Annex,INQ,Inquiry Desk,1,normal
+2026-04,2026-04-01,incoming-a,クレーム集計260401.xlsx,3,ok,BR04,Dahlia Hub,RSP,Response Desk,4,normal
+2026-04,2026-04-01,incoming-a,クレーム集計260401.xlsx,4,ok,BR05,Elm South,OTH,Other Desk,3,normal
+2026-04,2026-04-02,incoming-a,クレーム集計260402.xlsx,1,ok,BR01,Aster Central,INQ,Inquiry Desk,2,normal
+2026-04,2026-04-02,incoming-a,クレーム集計260402.xlsx,2,ok,BR03,Cobalt East,INQ,Inquiry Desk,1,normal
+2026-04,2026-04-02,incoming-a,クレーム集計260402.xlsx,3,ok,BR04,Dahlia Hub,REP,Repair Desk,2,normal
+2026-04,2026-04-02,incoming-a,クレーム集計260402.xlsx,4,ok,BR06,Fennel South,DEL,Delivery Desk,5,normal
+2026-04,2026-04-02,incoming-b,クレーム集計260402.xlsx,1,duplicate_file,BR01,Aster Central,INQ,Inquiry Desk,9,skip duplicate day file
+2026-04,2026-04-02,incoming-b,クレーム集計260402.xlsx,2,duplicate_file,BR04,Dahlia Hub,REP,Repair Desk,9,skip duplicate day file
+2026-04,2026-04-15,incoming-a,クレーム集計260415.xlsx,1,ok,BR02,Beryl Annex,DEL,Delivery Desk,3,normal
+2026-04,2026-04-15,incoming-a,クレーム集計260415.xlsx,2,ok,BR03,Cobalt East,CON,Contract Desk,1,normal
+2026-04,2026-04-15,incoming-a,クレーム集計260415.xlsx,3,ok,BR04,Dahlia Hub,DEL,Delivery Desk,2,normal
+2026-04,2026-04-15,incoming-a,クレーム集計260415.xlsx,4,ok,BR05,Elm South,APP,App Support,2,normal
+2026-04,2026-04-30,incoming-b,クレーム集計260430.xlsx,1,ok,BR01,Aster Central,RSP,Response Desk,1,normal
+2026-04,2026-04-30,incoming-b,クレーム集計260430.xlsx,2,ok,BR04,Dahlia Hub,BIL,Billing Desk,2,normal
+2026-04,2026-04-30,incoming-b,クレーム集計260430.xlsx,3,ok,BR06,Fennel South,OTH,Other Desk,4,normal
+2026-04,2026-04-30,incoming-b,クレーム集計260430.xlsx,4,unknown_business,BR02,Beryl Annex,XYZ,Unknown Desk,8,skip and log unknown business
+2026-05,2026-05-01,incoming-a,クレーム集計260501.xlsx,1,ok,BR01,Aster Central,INQ,Inquiry Desk,1,normal
+2026-05,2026-05-01,incoming-a,クレーム集計260501.xlsx,2,ok,BR01,Aster Central,REP,Repair Desk,4,normal
+2026-05,2026-05-01,incoming-a,クレーム集計260501.xlsx,3,ok,BR02,Beryl Annex,APP,App Support,2,normal
+2026-05,2026-05-01,incoming-a,クレーム集計260501.xlsx,4,ok,BR05,Elm South,CON,Contract Desk,3,normal
+2026-05,2026-05-16,incoming-b,クレーム集計260516.xlsx,1,ok,BR03,Cobalt East,RSP,Response Desk,2,normal
+2026-05,2026-05-16,incoming-b,クレーム集計260516.xlsx,2,ok,BR04,Dahlia Hub,RSP,Response Desk,3,normal
+2026-05,2026-05-16,incoming-b,クレーム集計260516.xlsx,3,ok,BR05,Elm South,INQ,Inquiry Desk,1,normal
+2026-05,2026-05-16,incoming-b,クレーム集計260516.xlsx,4,ok,BR06,Fennel South,DEL,Delivery Desk,2,normal
+2026-05,2026-05-31,incoming-a,クレーム集計260531.xlsx,1,ok,BR01,Aster Central,BIL,Billing Desk,5,normal
+2026-05,2026-05-31,incoming-a,クレーム集計260531.xlsx,2,ok,BR04,Dahlia Hub,REP,Repair Desk,1,normal
+2026-05,2026-05-31,incoming-a,クレーム集計260531.xlsx,3,ok,BR04,Dahlia Hub,DEL,Delivery Desk,2,normal
+2026-05,2026-05-31,incoming-a,クレーム集計260531.xlsx,4,ok,BR06,Fennel South,OTH,Other Desk,3,normal
