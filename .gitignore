@@ -2,7 +2,21 @@
 ~$*
 *.tmp
 
-# Local/generated workbooks that have not been public-safety checked
+# Office workbooks are ignored until they pass the public-safety checklist.
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
+
+# Checked sample workbooks may be tracked only in this reviewed location.
+!samples/checked/
+!samples/checked/README.md
+!samples/checked/**/*.xls
+!samples/checked/**/*.xlsx
+!samples/checked/**/*.xlsm
+!samples/checked/**/*.xlsb
+
+# Local/generated workbooks that have not been public-safety checked.
 samples/generated/
 outputs/**/scratch/
 
@@ -15,7 +29,7 @@ Thumbs.db
 # Logs that may contain local paths
 *.log
 
-# Keep exported VBA and curated sample workbooks reviewable before commit.
+# Keep exported VBA reviewable before commit.
 !src/**/*.bas
 !src/**/*.cls
 !samples/**/*.md

@@ -40,6 +40,10 @@ Initial repository scaffold. The experiment is managed through GitHub Issues so 
 - `tests/`: manual Excel verification scenarios and result logs.
 - `.github/issues/`: issue body drafts used for initial GitHub issue creation.
 
+## Public Boundary
+
+See `docs/public-boundary.md` before adding prompts, logs, workbooks, exported VBA, screenshots, or generated outputs. Issue #1 scaffold checks are recorded in `docs/scaffold-audit-issue-1.md`.
+
 ## Git Boundary
 
 This directory is an independent Git repository under the parent `_Workspace` folder. Do not mix commits or issue work between this repository and the parent workspace repository.

@@ -9,6 +9,7 @@ These rules apply to this independent repository. Parent `_Workspace` rules stil
 - Use only fictional, synthetic, publishable data.
 - Do not add real customer, employee, branch, business, complaint, file path, workbook metadata, screenshots, secrets, or private source material.
 - Treat `.xlsm` files as potentially sensitive until metadata and hidden content have been checked.
+- Follow `docs/public-boundary.md` before adding any workbook, prompt log, generated output, screenshot, or exported VBA artifact.
 
 ## Experiment Integrity
 
@@ -30,3 +31,4 @@ These rules apply to this independent repository. Parent `_Workspace` rules stil
 - This directory is its own Git repository. Do not commit these files to the parent `_Workspace` repository.
 - Keep commits scoped to one meaningful issue or phase.
 - GitHub Issues are the task tracker for this repository.
+- Record scaffold and public-safety audit updates in `docs/scaffold-audit-issue-1.md` or the relevant later issue document.
