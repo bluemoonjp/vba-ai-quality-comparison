@@ -63,4 +63,4 @@
 
 ## 最終出力
 
-未収集。
+`outputs/codex-multi-agent-review/final-output.md` に保存。
