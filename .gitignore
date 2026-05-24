@@ -8,17 +8,15 @@
 *.xlsm
 *.xlsb
 
-# Checked sample workbooks may be tracked only in this reviewed location.
-!samples/checked/
-!samples/checked/README.md
-!samples/checked/**/*.xls
-!samples/checked/**/*.xlsx
-!samples/checked/**/*.xlsm
-!samples/checked/**/*.xlsb
+# Checked sample workbooks may be tracked only in reviewed sample locations.
+!experiments/**/samples/workbooks/
+!experiments/**/samples/workbooks/**/*.xlsx
 
 # Local/generated workbooks that have not been public-safety checked.
 samples/generated/
 outputs/**/scratch/
+experiments/**/samples/generated/
+experiments/**/model-artifacts/**/scratch/
 
 # Local tool state
 .DS_Store
@@ -30,8 +28,9 @@ node_modules/
 # Logs that may contain local paths
 *.log
 
-# Keep exported VBA reviewable before commit.
-!src/**/*.bas
-!src/**/*.cls
-!samples/**/*.md
-!samples/**/*.csv
+# Keep exported VBA and experiment source data reviewable before commit.
+!experiments/**/*.bas
+!experiments/**/*.cls
+!experiments/**/*.md
+!experiments/**/*.csv
+!experiments/**/*.mjs
