@@ -24,3 +24,10 @@
 ## Excel検証
 
 Windows版Excelで、サンプル月次workbookのコピーにVBAをimportして実行します。検証用 `.xlsm` はscratch扱いで、リポジトリ成果物として保存しません。
+
+## 実行補足
+
+- Excel VBE importで日本語文字列が文字化けする場合は、scratch内にCP932変換したimport用コピーを作成する。追跡対象の `.bas` は変更しない。
+- cloud-synced folder配下で `ThisWorkbook.Path` がURLになる場合は、scratchを一時ドライブへ割り当て、Excelからローカルパスとして開く。
+- 期待値照合は行順ではなく、支店コード + 業務コードをキーにして行う。
+- `day_01`, `day_02`, `day_15`, `month_total` に加え、その他日別列が不要に変更されていないことを確認する。
